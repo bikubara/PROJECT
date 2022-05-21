@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+#meter{height:300;width:700;background:green;position:absolute;left:400px;}
+
+#meter::before{content:"";height:200px;width:10px;background:pink;position:absolute;left:50%;border-radius:20px;transform-origin:50% 98% ;
+animation:rot 0.00001s linear infinite;
+}
+
+#meter::after{content:"";height:10;width:10;background:yellow;position:absolute;
+left:50%;top:180px;border-radius:60px;}
+
+@keyframes rot{
+0%{transform:rotate(-100deg);}
+
+100%{transform:rotate(90deg);}
+}
+
+</style>
+</head>
+
+<body style="font-family:helvica;">
+<div id="meter"></div>
+meter(temperature):<meter id="hello" min="0"  low="45" high="52" max="100" value="52">meter</meter><br>
+"button" <input type= "button" value="button" ><br>
+"checkbox" <input type= "checkbox" value="ture"><br>
+"color" <input type= "color" ><br>
+"date" <input type= "date" ><br>
+"datetime-local"<input type= "datetime-local" ><br>
+"email" <input type= "email" ><br>
+"file" <input type= "file" ><br>
+"hidden" <input type= "hidden" ><br>
+"image" <input type= "image" ><br>
+"month" <input type= "month" ><br>
+"number" <input type= "number" ><br>
+"password" <input type= "password" ><br>
+"radio" <input type= "radio" ><br>
+"range" <input type= "range" ><br>
+"reset" <input type= "reset" ><br>
+"search" <input type= "search" ><br>
+"submit" <input type= "submit" ><br>
+"tel" <input type= "tel" ><br>
+"text" <input type= "text" ><br>
+"time" <input type= "time" ><br>
+"url" <input type= "url" ><br>
+</body>
+</html>
