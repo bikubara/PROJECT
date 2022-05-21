@@ -79,6 +79,92 @@
    // alert(format);
     document.getElementById("display").innerHTML+=format;
     }
+
+    function array5(){
+                        // 1st methord creating array
+                        const rec=["hello", 25, 32];
+                        alert(rec);
+                    // 2nd methord
+                        const cars=[];
+                        cars[0]="hello";
+                        cars[2]="hello2";
+                        cars[3]="hello3";
+                        cars[4]="hello4";
+                        alert(cars);
+                    //3rd methord using the javascript keyword
+                    const car1 = new Array("bmw", "volvo","cat")
+                    alert(car1);
+
+                    //changing an array 1st array element to bot
+                    car1[0]="bot";
+                    alert(car1);
+                    
+                    
+                    //arrays are objects
+                    // typeof returns "objects" for arrays.
+                    
+                    //objects uses names to acess its members eg: person.firstName
+                    //objects
+                    // array are special type of objects in javascpipt
+                    // because of this, we can have variables of diffrent types in the same array.
+                    // we can have OBJECECTS in an array. we can have FUNCTION in an array
+                    // we can have ARRAYS in an ARRAYS
+                    //eg: myArray[0]=Date.now;
+                    //eg: myArray[1]=myFunction;
+                    //eg: myArray[2]=myCars;
+
+                    // the real strength of javascript arrays are the build-in
+                    //array properties and methords;
+                    //eg: cars.length   returns the number of elements
+                    //eg: cars.sort()   Sorts the array;
+
+
+                    const person={firstname:"prem",lastname:"bara",ages:36};
+                    alert(person.firstname);
+
+                    // adding NEW array elements
+                    // !! adding elements with high indexes can create undefined "holes" in an array
+                    // object fruit[] having 2 element and if we enter fruit[6]="orange" will create HOLES
+
+                   rec.push("audi");
+                   alert(rec);
+
+                    //arrays with NAMED INDEXES are called ASSOCIATIVE ARRAYS or hashes
+                    //javascript does not support arrays with named indexes
+                    //in javascript, arrays always use nunbered indexes.
+
+                    //if we use named INDEX, javascript will redefine the array to an OBJECT
+
+
+                    //DIFFRENCE between ARRAYS and OBJECTS
+                    //in javascript, ARRAYs use NUMBERED indexes. eg:0,1,2,3,4 etc
+                    //in javascript, OBJECTs use NAMED indexes. eg: p.fnam ; bot.leg etc
+                    // arrays are special kind of objects, with numbered indexes.
+
+                    //new Array() constructor
+                    //const point= new Array();
+                    //const point=[];
+                    //both create a new empty array named points
+
+                    //new keyword can produce somne unexpected results
+                    //COMMON ERROR
+                    //const points=[40];-----------------creates an array with one element
+                    //const points=new Array(40);--------creates an array with 40 undefined elements:
+
+
+                    // to identify array
+                    //Array.isArray(fruits);
+                    //fruits instanceof Array;
+
+
+
+
+
+
+                    }
+
+
+
     </script>
     <style>
         #create{display:none;}
@@ -88,6 +174,8 @@
         <h1>DMS(drone management system)</h1>
 
         <button onclick="reg_portal_display()">register new drone</button><br>
+
+        <button onclick="array5()">experiment</button><br>
 
         total drones connected : 124<br>
         time:<input type="time" id="t1"><input type="submit" onclick="loadtime()"><br>
