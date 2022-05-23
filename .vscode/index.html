@@ -53,15 +53,12 @@
                 else { document.getElementById("create").style.display = "none"; }
             }
     
-    //displays the drones in dbms
+    //displays the drones inside register new model
+    
     function display_drones(){
+      
 
-        var d_name=document.getElementById("dname").value;
-        var d_did=document.getElementById("did").value;
-        var d_camera=document.getElementById("dcamera").checked;
-        var d_gps=document.getElementById("dgps").checked;
-        var d_radio=document.getElementById("dradio").checked;
-        var d_motor=document.getElementsByName('r');
+    
 
         // to print radio values we need to create a for loop
         for(i=0;i<d_motor.length;i++){
@@ -70,16 +67,30 @@
              var for1=d_motor[i].value;
         }
 
+       // const pet={fname:"prem",lname:for1}
+
+       //object
+ const d={D_name:d_name,D_id:d_id,D_motor:for1,D_camera:d_camera,D_gps:d_gps,D_radio:d_radio}
+      
+        //array
+        const po=[[d_name],[d_id],[d_camera],[d_gps],[d_radio],[d_motor]];
 
 
-
-
-        format="\n | "+d_name+" | "+d_did+" | "+for1+" | "+d_camera+" | "+d_gps+" | "+d_radio+"<br>";
-
-   // alert(format);
+      // format="\n | "+d_name+" | "+d_did+" | "+for1+" | "+d_camera+" | "+d_gps+" | "+d_radio+"<br>";
+         format="||format>"+d.D_name+d.D_id+d.D_motor+d.D_camera+d.D_gps+d.D_radio+"|||Arrays>>"+po+"<br>";
+      //  alert(po);
+        // alert(format);
     document.getElementById("display").innerHTML+=format;
     }
 
+    // function create_object(){
+    //     const d={D_name:DN,D_id:DID,D_motor:DMOTOR,D_camera:DCAMERA,D_gps:DGPS,D_radio:DRADIO}
+    //     alert(d);
+    // }
+    
+    
+    //newly created arrays and objects arrays are special type of objects in javascript it is the reson why we can store diffrent types of data in javascript arrays
+    //experimnt button
     function array5(){
                         // 1st methord creating array
                         const rec=["hello", 25, 32];
@@ -163,11 +174,58 @@
 
                     }
 
+        const fot=[[1,2,3,4,0],[8,5,2,6,5,9],[8,7,4,5,4],[8,5,6,7,5,9,5]]
 
+    // DB_LAYRING LVL 1 AND 2 view
+    function show_db(){
+            //level 1
+            for(j=0;j<=fot.length;j++){
+                    //level 2 
+                    for(i=0;i<=fot.length;i++){
+                    format=fot[j][i];
+                    document.getElementById("display").innerHTML+=format+"";
+                    }
+                    
+                document.getElementById("display").innerHTML+="||"+fot[j]+"<br>";
+            }
+                }
 
+                // insertion of arrays with irement each step eg:1,2,3,4
+                var c=0;
+                const ddd=[];
+                function increment(){ 
+                    //inputting values
+                     var d_name=document.getElementById("dname").value;
+                    //  var d_id=document.getElementById("did").value;
+                    //  var d_camera=document.getElementById("dcamera").checked;
+                    //  var d_gps=document.getElementById("dgps").checked;
+                    //  var d_radio=document.getElementById("dradio").checked;
+                    //  var d_motor=document.getElementsByName('r');
+
+                    //  //assigning values to arraya  
+                    //  ddd[0][0]==d_name;
+                    //  ddd[c][1]=d_id;
+                    //  ddd[c][2]=d_camera;
+                    //  ddd[c][3]=d_d_gps;
+                    //  ddd[c][4]=d_radio;
+                    //  ddd[c][5]=d_motor;
+                    //  //formattting the alias
+                    // format4=ddd[c][0]+ddd[c][1]+ddd[c][2]+ddd[c][3]+ddd[c][4]+ddd[c][5];
+
+                    format3=++c+d_name;
+                    document.getElementById("display").innerHTML+=format3+"|"+"<br>";
+                }
+
+               function display_db(){
+
+                for(i=0;i<=ddd.length-1;i++){
+                document.getElementById("display").innerHTML+=i+ddd[0]+"<br>";
+                }
+               }
     </script>
     <style>
-        #create{display:none;}
+        /* reset to enable the block element*/
+        #create{display:block;}
 
     </style>
     <body onload="run()">
@@ -199,6 +257,9 @@
         radio:<input type="checkbox"  id="dradio"><br>
         <input type="submit" onclick="load_drone()">
         <button onclick="display_drones()"> display drones</button>
+        <button onclick="show_db()">show drone DBMS</button>
+        <button onclick="increment()">increment</button>
+        <button onclick="display_db()">DB</button>
             
         </div>
 <hr>
