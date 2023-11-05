@@ -1,10 +1,12 @@
-class car(){
+ 
+ 
+ class car {
+//String c =System.out.println("hep");
 
 
+public static void main(String[] args){
+System.out.println("hhe");
 
-public void main(string[] args){
-
-System.out.println("hellox");
 }
 //go
 }
