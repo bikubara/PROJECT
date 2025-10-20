@@ -10,8 +10,12 @@ def multiply(x,y):
 def divide(x,y):
  return x/y
 
+print("\n")
+print("------------------------------------------------------------------------------------------")
+print("SIMPLE CALCULATOR (two numbers)");
+print("------------------------------------------------------------------------------------------")
 
-choice=input("enter choice(1/2/3/4):")
+choice=input("ENTER CHOICE( |1=add | 2=subtract | 3=multiply | 4=divide | ):")
 
 num1=int(input("enter first number:"))
 num2=int(input("enter second number:"))
