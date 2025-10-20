@@ -1,3 +1,6 @@
+#project: simple 2 digit calculator
+#author: biku bara
+
 def add(x,y):
  return x+y
 
