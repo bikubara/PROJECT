@@ -1,5 +1,3 @@
-import java.util.*;
-import java.lang.*;
 
 // very simple code
 class Run{
