@@ -36,5 +36,5 @@ elif choice=="4":
      print(num1 ,' / ', num2, ' = ' , divide(num1,num2))
 
 else:
-    print("you entered the incorrect 4argument")
+    print("you entered the incorrect argument")
 
