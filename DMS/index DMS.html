@@ -1,228 +1,213 @@
 <html>
     <script>
-// const
+        // const
         const g=[1,2,3,4,5,6,7,8,9];
         
-    //to create automatic later
-    // to run the array of drones stored in arrays manually
+        //to create automatic later
+        // to run the array of drones stored in arrays manually
         function run(){
-
             for(i=0;i<g.length;i++){
+            // g is a const array
             var format=g[i]+"<br>";
             var c=document.getElementById("display1").innerHTML+=format;
             }
         }
 
-    // loads time module
+        // creates and loads time module
         function load_time(){
-         var ti=new Date();
-               var t4=ti.getDate;
-          var d=document.getElementById("t1").value;
+            var ti=new Date();
+            var t4=ti.getDate;
+            var d=document.getElementById("t1").value;
             alert(t4);
         } 
 
-    // gets and loads drones inputs
+        // gets and loads drones inputs from gui
         function load_drone(){
-     
-    // getting documents of INPUTS as variables
-        var d_name=document.getElementById("dname").value;
-        var d_did=document.getElementById("did").value;
-        var d_camera=document.getElementById("dcamera").checked;
-        var d_gps=document.getElementById("dgps").checked;
-        var d_radio=document.getElementById("dradio").checked;
-        //by name
-        var d_motor=document.getElementsByName('r');
+    
+            // getting documents of INPUTS  from GUI as variables
+            var d_name=document.getElementById("dname").value;
+            var d_did=document.getElementById("did").value;
+            var d_camera=document.getElementById("dcamera").checked;
+            var d_gps=document.getElementById("dgps").checked;
+            var d_radio=document.getElementById("dradio").checked;
+            //by name
+            var d_motor=document.getElementsByName('r');
 
-     // to print radio values we need to create a for loop
-     for(i=0;i<d_motor.length;i++){
-            if(d_motor[i].checked)
-            var for1=d_motor[i].value;
-        }
-       
-     // format all the drone input data  in format1 and diaplaying as alert
-        var format1="value entred \n"+"name: "+d_name +"\n id:"+ d_did +"\n drone motor: "+for1+"\n drone camera: "+d_camera+"\n drone GPS: "+d_gps+"\n drone_radio: "+d_radio;
-            alert(format1);
-    //document.getElementById("display").innerHTML=format1
+            // to print radio values we need to create a for loop
+            for(i=0;i<d_motor.length;i++){
+                    if(d_motor[i].checked)
+                    var for1=d_motor[i].value;
+            }
+            
+            // format all the drone input data  in format1 and diaplaying as alert
+                var format1="value entred \n"+"name: "+d_name +"\n id:"+ d_did +"\n drone motor: "+for1+"\n drone camera: "+d_camera+"\n drone GPS: "+d_gps+"\n drone_radio: "+d_radio;
+                    alert(format1);
+            //document.getElementById("display").innerHTML=format1
         }
 
-    // check and BLOCK and NONE the registration portal
+        // check status of BLOCK and NONE the registration portal and display accordingly
         function reg_portal_display() {
-                var c = document.getElementById("create").style.display;
+            var c = document.getElementById("create").style.display;
                 if (c == "none") {
                     document.getElementById("create").style.display = "block";
                 }
                 else { document.getElementById("create").style.display = "none"; }
+        }
+    
+        //displays the drones inside register new model
+        function display_drones(){
+            // to print radio values we need to create a for loop
+            for(i=0;i<d_motor.length;i++){
+                if(d_motor[i].checked)
+                //output for radion button
+                var for1=d_motor[i].value;
             }
-    
-    //displays the drones inside register new model
-    
-    function display_drones(){
-      
 
-    
+            // const pet={fname:"prem",lname:for1}
+            //object
+            const d={D_name:d_name,D_id:d_id,D_motor:for1,D_camera:d_camera,D_gps:d_gps,D_radio:d_radio}
+            
+            //array of elements
+            const po=[[d_name],[d_id],[d_camera],[d_gps],[d_radio],[d_motor]];
 
-        // to print radio values we need to create a for loop
-        for(i=0;i<d_motor.length;i++){
-          if(d_motor[i].checked)
-          //output for radion button
-             var for1=d_motor[i].value;
+
+            // format="\n | "+d_name+" | "+d_did+" | "+for1+" | "+d_camera+" | "+d_gps+" | "+d_radio+"<br>";
+            format="||format>"+d.D_name+d.D_id+d.D_motor+d.D_camera+d.D_gps+d.D_radio+"|||Arrays>>"+po+"<br>";
+            document.getElementById("display").innerHTML+=format;
         }
 
-       // const pet={fname:"prem",lname:for1}
+        //newly created arrays and objects arrays are special type of objects in javascript it is the reson why we can store diffrent types of data in javascript arrays
+        //experimnt button
+        function array5(){
+            // 1st methord creating array
+            const rec=["hello", 25, 32];
+            alert(rec);
 
-       //object
- const d={D_name:d_name,D_id:d_id,D_motor:for1,D_camera:d_camera,D_gps:d_gps,D_radio:d_radio}
-      
-        //array
-        const po=[[d_name],[d_id],[d_camera],[d_gps],[d_radio],[d_motor]];
+            // 2nd methord
+            const cars=[];
+            cars[0]="hello";
+            cars[2]="hello2";
+            cars[3]="hello3";
+            cars[4]="hello4";
+            alert(cars);
 
+            //3rd methord using the javascript keyword
+            const car1 = new Array("bmw", "volvo","cat")
+            alert(car1);
 
-      // format="\n | "+d_name+" | "+d_did+" | "+for1+" | "+d_camera+" | "+d_gps+" | "+d_radio+"<br>";
-         format="||format>"+d.D_name+d.D_id+d.D_motor+d.D_camera+d.D_gps+d.D_radio+"|||Arrays>>"+po+"<br>";
-      //  alert(po);
-        // alert(format);
-    document.getElementById("display").innerHTML+=format;
-    }
+            //changing an array 1st array element to bot
+            car1[0]="bot";
+            alert(car1);
+            
+        
+            //arrays are objects
+            // typeof returns "objects" for arrays.
+            
+            //objects uses names to acess its members eg: person.firstName
+            //objects
+            // array are special type of objects in javascpipt
+            // because of this, we can have variables of diffrent types in the same array.
+            // we can have OBJECECTS in an array. we can have FUNCTION in an array
+            // we can have ARRAYS in an ARRAYS
+            //eg: myArray[0]=Date.now;
+            //eg: myArray[1]=myFunction;
+            //eg: myArray[2]=myCars;
 
-    // function create_object(){
-    //     const d={D_name:DN,D_id:DID,D_motor:DMOTOR,D_camera:DCAMERA,D_gps:DGPS,D_radio:DRADIO}
-    //     alert(d);
-    // }
-    
-    
-    //newly created arrays and objects arrays are special type of objects in javascript it is the reson why we can store diffrent types of data in javascript arrays
-    //experimnt button
-    function array5(){
-                        // 1st methord creating array
-                        const rec=["hello", 25, 32];
-                        alert(rec);
-                    // 2nd methord
-                        const cars=[];
-                        cars[0]="hello";
-                        cars[2]="hello2";
-                        cars[3]="hello3";
-                        cars[4]="hello4";
-                        alert(cars);
-                    //3rd methord using the javascript keyword
-                    const car1 = new Array("bmw", "volvo","cat")
-                    alert(car1);
-
-                    //changing an array 1st array element to bot
-                    car1[0]="bot";
-                    alert(car1);
-                    
-                    
-                    //arrays are objects
-                    // typeof returns "objects" for arrays.
-                    
-                    //objects uses names to acess its members eg: person.firstName
-                    //objects
-                    // array are special type of objects in javascpipt
-                    // because of this, we can have variables of diffrent types in the same array.
-                    // we can have OBJECECTS in an array. we can have FUNCTION in an array
-                    // we can have ARRAYS in an ARRAYS
-                    //eg: myArray[0]=Date.now;
-                    //eg: myArray[1]=myFunction;
-                    //eg: myArray[2]=myCars;
-
-                    // the real strength of javascript arrays are the build-in
-                    //array properties and methords;
-                    //eg: cars.length   returns the number of elements
-                    //eg: cars.sort()   Sorts the array;
+            // the real strength of javascript arrays are the build-in
+            //array properties and methords;
+            //eg: cars.length   returns the number of elements
+            //eg: cars.sort()   Sorts the array;
 
 
-                    const person={firstname:"prem",lastname:"bara",ages:36};
-                    alert(person.firstname);
+            const person={firstname:"prem",lastname:"bara",ages:36};
+            alert(person.firstname);
 
-                    // adding NEW array elements
-                    // !! adding elements with high indexes can create undefined "holes" in an array
-                    // object fruit[] having 2 element and if we enter fruit[6]="orange" will create HOLES
+            // adding NEW array elements
+            // !! adding elements with high indexes can create undefined "holes" in an array
+            // object fruit[] having 2 element and if we enter fruit[6]="orange" will create HOLES
 
-                   rec.push("audi");
-                   alert(rec);
+            rec.push("audi");
+            alert(rec);
 
-                    //arrays with NAMED INDEXES are called ASSOCIATIVE ARRAYS or hashes
-                    //javascript does not support arrays with named indexes
-                    //in javascript, arrays always use nunbered indexes.
+            //arrays with NAMED INDEXES are called ASSOCIATIVE ARRAYS or hashes
+            //javascript does not support arrays with named indexes
+            //in javascript, arrays always use nunbered indexes.
 
-                    //if we use named INDEX, javascript will redefine the array to an OBJECT
-
-
-                    //DIFFRENCE between ARRAYS and OBJECTS
-                    //in javascript, ARRAYs use NUMBERED indexes. eg:0,1,2,3,4 etc
-                    //in javascript, OBJECTs use NAMED indexes. eg: p.fnam ; bot.leg etc
-                    // arrays are special kind of objects, with numbered indexes.
-
-                    //new Array() constructor
-                    //const point= new Array();
-                    //const point=[];
-                    //both create a new empty array named points
-
-                    //new keyword can produce somne unexpected results
-                    //COMMON ERROR
-                    //const points=[40];-----------------creates an array with one element
-                    //const points=new Array(40);--------creates an array with 40 undefined elements:
+            //if we use named INDEX, javascript will redefine the array to an OBJECT
 
 
-                    // to identify array
-                    //Array.isArray(fruits);
-                    //fruits instanceof Array;
+            //DIFFRENCE between ARRAYS and OBJECTS
+            //in javascript, ARRAYs use NUMBERED indexes. eg:0,1,2,3,4 etc
+            //in javascript, OBJECTs use NAMED indexes. eg: p.fnam ; bot.leg etc
+            // arrays are special kind of objects, with numbered indexes.
+
+            //new Array() constructor
+            //const point= new Array();
+            //const point=[];
+            //both create a new empty array named points
+
+            //new keyword can produce somne unexpected results
+            //COMMON ERROR
+            //const points=[40];-----------------creates an array with one element
+            //const points=new Array(40);--------creates an array with 40 undefined elements:
 
 
+            // to identify array
+            //Array.isArray(fruits);
+            //fruits instanceof Array;
 
-
-
-
-                    }
+        }
 
         const fot=[[1,2,3,4,0],[8,5,2,6,5,9],[8,7,4,5,4],[8,5,6,7,5,9,5]]
 
-    // DB_LAYRING LVL 1 AND 2 view
-    function show_db(){
+        // DB_LAYRING LVL 1 AND 2 view local storage    
+        function show_db(){
             //level 1
             for(j=0;j<=fot.length;j++){
-                    //level 2 
-                    for(i=0;i<=fot.length;i++){
+                //level 2 
+                for(i=0;i<=fot.length;i++){
                     format=fot[j][i];
                     document.getElementById("display").innerHTML+=format+"";
-                    }
-                    
+                }
+                
                 document.getElementById("display").innerHTML+="||"+fot[j]+"<br>";
             }
-                }
+        }
 
-                // insertion of arrays with irement each step eg:1,2,3,4
-                var c=0;
-                const ddd=[];
-                function increment(){ 
-                    //inputting values
-                     var d_name=document.getElementById("dname").value;
-                    //  var d_id=document.getElementById("did").value;
-                    //  var d_camera=document.getElementById("dcamera").checked;
-                    //  var d_gps=document.getElementById("dgps").checked;
-                    //  var d_radio=document.getElementById("dradio").checked;
-                    //  var d_motor=document.getElementsByName('r');
+        // insertion of arrays with irement each step eg:1,2,3,4
+        var c=0;
+        const ddd=[];
+        //increment of values
+        function increment(){ 
+            //inputting values
+            var d_name=document.getElementById("dname").value;
+            //  var d_id=document.getElementById("did").value;
+            //  var d_camera=document.getElementById("dcamera").checked;
+            //  var d_gps=document.getElementById("dgps").checked;
+            //  var d_radio=document.getElementById("dradio").checked;
+            //  var d_motor=document.getElementsByName('r');
 
-                    //  //assigning values to arraya  
-                    //  ddd[0][0]==d_name;
-                    //  ddd[c][1]=d_id;
-                    //  ddd[c][2]=d_camera;
-                    //  ddd[c][3]=d_d_gps;
-                    //  ddd[c][4]=d_radio;
-                    //  ddd[c][5]=d_motor;
-                    //  //formattting the alias
-                    // format4=ddd[c][0]+ddd[c][1]+ddd[c][2]+ddd[c][3]+ddd[c][4]+ddd[c][5];
+            //  //assigning values to arraya  
+            //  ddd[0][0]==d_name;
+            //  ddd[c][1]=d_id;
+            //  ddd[c][2]=d_camera;
+            //  ddd[c][3]=d_d_gps;
+            //  ddd[c][4]=d_radio;
+            //  ddd[c][5]=d_motor;
+            //  //formattting the alias
+            // format4=ddd[c][0]+ddd[c][1]+ddd[c][2]+ddd[c][3]+ddd[c][4]+ddd[c][5];
 
-                    format3=++c+d_name;
-                    document.getElementById("display").innerHTML+=format3+"|"+"<br>";
-                }
+            format3=++c+d_name;
+            document.getElementById("display").innerHTML+=format3+"|"+"<br>";
+        }
 
-               function display_db(){
+        //display the time
+        function display_db(){
 
-                for(i=0;i<=ddd.length-1;i++){
-                document.getElementById("display").innerHTML+=i+ddd[0]+"<br>";
-                }
-               }
+            for(i=0;i<=ddd.length-1;i++){
+                    document.getElementById("display").innerHTML+=i+ddd[0]+"<br>";
+            }
+        }
     </script>
     <style>
         /* reset to enable the block element*/
@@ -233,41 +218,39 @@
         <h1>DMS(drone management system)</h1>
 
         <button onclick="reg_portal_display()">register new drone</button><br>
-
         <button onclick="array5()">experiment</button><br>
 
         total drones connected : 124<br>
         time:<input type="time" id="t1"><input type="submit" onclick="loadtime()"><br>
         status<input type="range" min="0" max="100"><br>
         <p id="display1"></p>
+        <hr>
 
-<hr>
         <!--created REGISTER portal-->
         <div id="create">
 
             register new model<br>
-         name:<input type="name" id="dname"><br>
-        ID:<input type="number" id="did"><br>
-        2:<input type="radio" name="r" id="dmotor" value="2" default="0">
-        3:<input type="radio" name="r" id="dmotor" value="3">    
-        4:<input type="radio" name="r" id="dmotor" value="4"> 
-        5:<input type="radio" name="r" id="dmotor" value="5"> 
-        6:<input type="radio" name="r" id="dmotor" value="6"><br>
-        camera:<input type="checkbox"  id="dcamera"> <br>
-        GPS:<input type="checkbox"  id="dgps"><br>
-        radio:<input type="checkbox"  id="dradio"><br>
-        <input type="submit" onclick="load_drone()">
-        <button onclick="display_drones()"> display drones</button>
-        <button onclick="show_db()">show drone DBMS</button>
-        <button onclick="increment()">increment</button>
-        <button onclick="display_db()">DB</button>
-            
+            name:<input type="name" id="dname"><br>
+            ID:<input type="number" id="did"><br>
+            2:<input type="radio" name="r" id="dmotor" value="2" default="0">
+            3:<input type="radio" name="r" id="dmotor" value="3">    
+            4:<input type="radio" name="r" id="dmotor" value="4"> 
+            5:<input type="radio" name="r" id="dmotor" value="5"> 
+            6:<input type="radio" name="r" id="dmotor" value="6"><br>
+            camera:<input type="checkbox"  id="dcamera"> <br>
+            GPS:<input type="checkbox"  id="dgps"><br>
+            radio:<input type="checkbox"  id="dradio"><br>
+            <input type="submit" onclick="load_drone()">
+            <button onclick="display_drones()"> display drones</button>
+            <button onclick="show_db()">show drone DBMS</button>
+            <button onclick="increment()">increment</button>
+            <button onclick="display_db()">DB</button>
+                
         </div>
-<hr>
+        <hr>
         <div id="display">
 
-
         </div>
 
-                </body>
+    </body>
 </html>

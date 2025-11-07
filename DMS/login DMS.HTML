@@ -1,44 +1,45 @@
 <HTML>
-    //
+
     <script>
- function run(){
- var d=document.getElementById("name1").value;
- if(d==""){alert("NO VALUE!! \n  ENTER USERNAME AND PASSWORD")}
-else if(d=="prem"){alert("hello "+d+" master"); location.href="h.html";}
- else{alert("invalid user \nno user found");}
- }
+        function run(){
+        var d=document.getElementById("name1").value;
+        if(d==""){alert("NO VALUE!! \n  ENTER USERNAME AND PASSWORD")}
+        else if(d=="prem"){alert("hello "+d+" master"); location.href="index.html";}
+        else{alert("invalid user \nno user found");}
+        }
 
     </script>
     <style>
 
-    #container{height:;width:;background:linear-gradient(#1000,#1500,);
-    padding:10px;border-radius:12px;border:1px solid white;}
-    .vol{border-radius:5px;border:none;margin:5px;height:30px;
-        width:200px;background:transparent;border:1px solid white;
-        color:white;font-size:16px;transition:0.3s;opacity:0.9;
-    }
-        
-    .vol:hover{background:blue;border:blue;opacity:1;}
+        #container{height:fit-content;width:fit-content;background:linear-gradient(#1000,#1500,);
+        padding:10px;border-radius:12px;border:1px solid white;}
+
+        .vol{border-radius:5px;border:none;margin:5px;height:30px;
+            width:200px;background:transparent;border:1px solid white;
+            color:white;font-size:16px;transition:0.3s;opacity:0.9;
+        }
+            
+        .vol:hover{background:blue;border:blue;opacity:1;}
 
     </style>
-<BODY bgcolor="rgba(255,255,255,0.2)">
-    <center>
-<H1>LOGIN PORTAL</H1>
-<div id="container">
-    <form>
-<input type="name" id="name1"class="vol" "username" required><br>                              
-<input type="password" class="vol" required><br>
-<input type="submit" value="submit" onclick="run()" class="vol" style="width: 60px;px;"><br>
-</form>
-</div>
-</center>
-to improve your mood: EXERCISE<br>
-to think clearly: MEDITATE<br>
-to understand world: READ<br>
-to understand yourself: write<br>
-to learn faster, make it: FUN<br>
-to grow faster, stay: CONSISTENT<br>
-to help people help: YOURSELF<br>
-</BODY>
+    <BODY bgcolor="rgba(255,255,255,0.2)">
+        <center>
+            <H1>LOGIN PORTAL</H1>
+            <div id="container">
+                <form>
+                    <input type="name" id="name1"class="vol" "username" required><br>                              
+                    <input type="password" class="vol" required><br>
+                    <input type="submit" value="submit" onclick="run()" class="vol" style="width:60px;"><br>
+                </form>
+            </div>
+        </center>
+        to improve your mood: EXERCISE<br>
+        to think clearly: MEDITATE<br>
+        to understand world: READ<br>
+        to understand yourself: write<br>
+        to learn faster, make it: FUN<br>
+        to grow faster, stay: CONSISTENT<br>
+        to help people help: YOURSELF<br>
+    </BODY>
 
 </HTML>
