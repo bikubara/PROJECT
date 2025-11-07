@@ -4,42 +4,63 @@
         function run(){
         var d=document.getElementById("name1").value;
         if(d==""){alert("NO VALUE!! \n  ENTER USERNAME AND PASSWORD")}
-        else if(d=="prem"){alert("hello "+d+" master"); location.href="index.html";}
+        else if(d=="prem"){alert("hello "+d+" master"); location.href="index DMS.html";}
         else{alert("invalid user \nno user found");}
         }
 
     </script>
     <style>
+        :root{
+            /* platelets 1*/
+            --color1:rgba(115,255,232);
 
-        #container{height:fit-content;width:fit-content;background:linear-gradient(#1000,#1500,);
-        padding:10px;border-radius:12px;border:1px solid white;}
+            --white:#fff;
+            --float_background:#123456;
+            --inside:var(--color1);
 
-        .vol{border-radius:5px;border:none;margin:5px;height:30px;
-            width:200px;background:transparent;border:1px solid white;
-            color:white;font-size:16px;transition:0.3s;opacity:0.9;
+        }
+
+        #container{height:fit-content;
+            width:fit-content;
+            background:var(--float_background);
+            padding:10px;border-radius:12px;
+            border:none;
+        }
+
+        .vol{border:1px solid green;
+            margin:4px;height:30px;
+            width:200px;background:transparent;
+            border-radius:1.5px;
+            color:white;font-size:16px;
+            transition:0.3s;opacity:0.9;
         }
             
-        .vol:hover{background:blue;border:blue;opacity:1;}
+        .vol:hover{background:var(--inside);border:blue;opacity:1;}
 
     </style>
-    <BODY bgcolor="rgba(255,255,255,0.2)">
+    <BODY style="background:var(--color1);">
         <center>
-            <H1>LOGIN PORTAL</H1>
+            <H1>DMS LOGIN PORTAL</H1>
             <div id="container">
                 <form>
-                    <input type="name" id="name1"class="vol" "username" required><br>                              
-                    <input type="password" class="vol" required><br>
-                    <input type="submit" value="submit" onclick="run()" class="vol" style="width:60px;"><br>
+                    <input type="name" id="name1"class="vol" placeholder="username" required><br>                              
+                    <input type="password" class="vol" placeholder="password" required><br>
+                    <input type="submit" value="submit" onclick="run()" class="vol" style="width:60px;.vol:hover{background:blue;}"><br>
                 </form>
             </div>
         </center>
-        to improve your mood: EXERCISE<br>
-        to think clearly: MEDITATE<br>
-        to understand world: READ<br>
-        to understand yourself: write<br>
-        to learn faster, make it: FUN<br>
-        to grow faster, stay: CONSISTENT<br>
-        to help people help: YOURSELF<br>
+        <br>
+        <center>
+            <i>
+                to improve your mood: EXERCISE<br>
+                to think clearly: MEDITATE<br>
+                to understand world: READ<br>
+                to understand yourself: write<br>
+                to learn faster, make it: FUN<br>
+                to grow faster, stay: CONSISTENT<br>
+                to help people help: YOURSELF<br>
+            </i>
+        </center>
     </BODY>
 
 </HTML>
